@@ -22,7 +22,7 @@ class Client(object):
     def __init__(self, host='localhost', port=8125):
         """ Initiate a new statsd client using given host arguments """
         self.host = host
-        self.port = port
+	self.port = int(port)
         self.addr = (host, port)
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
