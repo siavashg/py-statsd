@@ -13,9 +13,14 @@ import socket
 import logging
 from pprint import pformat
 
-class Statsd(object):
+class Client(object):
+    """ statsd client for sending over metrics
+        Based on:
+        https://github.com/etsy/statsd/blob/master/examples/python_example.py
+    """
 
     def __init__(self, host='localhost', port=8125):
+        """ Initiate a new statsd client using given host arguments """
         self.host = host
         self.port = port
         self.addr = (host, port)
